@@ -52,6 +52,7 @@ def plotly_events(
     override_height=450,
     override_width="100%",
     key=None,
+    config={}
 ):
     """Create a new instance of "plotly_events".
 
@@ -102,6 +103,7 @@ def plotly_events(
         click_event=click_event,
         select_event=select_event,
         hover_event=hover_event,
+        config=config,
         default="[]",  # Default return empty JSON list
     )
 
