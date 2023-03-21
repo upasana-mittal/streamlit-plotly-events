@@ -12,6 +12,7 @@ class StreamlitPlotlyEventsComponent extends StreamlitComponentBase {
     const plot_obj = JSON.parse(this.props.args["plot_obj"]);
     const override_height = this.props.args["override_height"];
     const override_width = this.props.args["override_width"];
+    const override_config = this.props.args["config"];
 
     // Event booleans
     const click_event = this.props.args["click_event"];
@@ -23,7 +24,7 @@ class StreamlitPlotlyEventsComponent extends StreamlitComponentBase {
       <Plot
         data={plot_obj.data}
         layout={plot_obj.layout}
-        config={plot_obj.config}
+        config=override_config
         frames={plot_obj.frames}
         onClick={click_event ? this.plotlyEventHandler : function(){}}
         onSelected={select_event ? this.plotlyEventHandler : function(){}}
